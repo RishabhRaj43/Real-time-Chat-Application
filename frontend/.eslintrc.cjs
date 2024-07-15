@@ -1,7 +1,7 @@
 module.exports = {
   root: true,
   env: { browser: true, es2020: true },
-  extends: [
+  extends: [ 
     'eslint:recommended',
     'plugin:react/recommended',
     'plugin:react/jsx-runtime',
