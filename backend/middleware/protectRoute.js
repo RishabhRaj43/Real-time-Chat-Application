@@ -4,7 +4,10 @@ import User from "../model/user.model.js";
 const protectRoute = async (req, res, next) => {
   try {
     const token = req.cookies.jwt;
+    // console.log("Cookies: ", req.cookies);
+    // console.log("token: ", token);
     if (!token) {
+      // console.log("Token Not Found");
       return res
         .status(401)
         .json({ error: "Unauthorized - No Token Provided" });
@@ -19,7 +22,7 @@ const protectRoute = async (req, res, next) => {
     const user = await User.findById(decoded.userId).select("-password");
 
     if (!user) {
-      return res.status(401).json({ error: "User Not Found" });
+      return res.status(404).json({ error: "User Not Found" });
     }
 
     req.user = user;

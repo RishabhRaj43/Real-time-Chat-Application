@@ -5,6 +5,7 @@ import generateTokenAndSetCookie from "../utils/generateToken.js";
 export const signup = async (req, res) => {
   try {
     const { fullName, userName, password, confirmPassword, gender } = req.body;
+    // console.log(fullName, userName, password, confirmPassword, gender);
   
     if (password !== confirmPassword) {
       res.status(400).json({ error: "Password don't match" });
@@ -43,6 +44,7 @@ export const signup = async (req, res) => {
       })
     }
     else{
+      console.log("Invalid User Data");
       res.status(400).json({error:"Invalid User Data"})
     }   
 
@@ -55,6 +57,7 @@ export const signup = async (req, res) => {
 export const login = async (req, res) => {
   try {
     const {userName,password} = req.body;
+    // console.log(userName,password); 
     const user = await User.findOne({userName});
     const isPassword = await bcrypt.compare(password,user?.password || "");
 
@@ -75,6 +78,7 @@ export const login = async (req, res) => {
     res.status(500).json({error:"Internal Server Error"})
   }
 };
+
 export const logout = (req, res) => {
   try {
     res.cookie("jwt","",{maxAge:0});
