@@ -1,4 +1,4 @@
-#MERN Stack Project: A Real Time Chat App
+# MERN Stack Project: A Real Time Chat App
 
 Some Features:
 
@@ -8,6 +8,21 @@ Some Features:
 4. Online user status (Socket.io and React Context)
 5. Global state management with Zustand
 6. Error handling both on the server and on the client
+
+## Screenshots
+
+- ***Signup Page***
+
+<img src="https://github.com/RishabhRaj43/Real-time-Chat-Application/blob/main/Screenshots/Signup.png" height=300 width-300 />
+
+- ***Login Page***
+
+<img src="https://github.com/RishabhRaj43/Real-time-Chat-Application/blob/main/Screenshots/login.png" height=300 width-300 />
+
+- ***Chat Page***
+
+<img src="https://github.com/RishabhRaj43/Real-time-Chat-Application/blob/main/Screenshots/Chatting%20UI.png" height=300 width-300 />
+
 
 Build the App
 
