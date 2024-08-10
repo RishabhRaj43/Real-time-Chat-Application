@@ -8,3 +8,5 @@ const useConversation = create((set) => ({
 }));
 
 export default useConversation;
+
+//zustand is a library for state management

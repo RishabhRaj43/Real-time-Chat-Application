@@ -1,6 +1,5 @@
 import Conversation from "../model/conversation.model.js";
 import Message from "../model/message.model.js";
-import mongoose from "mongoose";
 import { getReceiverSocketId, io } from "../socket/socket.js";
 
 export const sendMessage = async (req, res) => {
@@ -9,7 +8,7 @@ export const sendMessage = async (req, res) => {
     const { id: receiverId } = req.params;
     const senderId = req.user._id;
 
-    let conversation = await Conversation.findOne({
+    let conversation = await Conversation.findOne({ 
       participants: { $all: [senderId, receiverId] },
     });
 
